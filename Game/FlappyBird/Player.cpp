@@ -41,13 +41,10 @@ namespace app
 			player.radius = (float)(player.flappyTexture.width / 3) / 2 - 30;
 			player.isDead = false;
 
-			// NOTE: Source rectangle (part of the texture to use for drawing)
 			player.sourceRec = { 0.0f, 0.0f, (float)player.flappyTexture.width / 3, (float)player.flappyTexture.height };
 
-			// NOTE: Destination rectangle (screen rectangle where drawing part of texture)
 			player.destRec = { player.position.x, player.position.y, (float)player.flappyTexture.width, (float)player.flappyTexture.height };
 
-			// NOTE: Origin of the texture (rotation/scale point), it's relative to destination rectangle size
 			player.origin = { ((float)player.flappyTexture.width / 3) / 2, (float)player.flappyTexture.height / 2};
 
 			//FrameTimeCounter

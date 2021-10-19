@@ -8,8 +8,12 @@ namespace app
 	{
 		struct Column
 		{
-			Rectangle rec1;
-			Rectangle rec2;
+			Texture2D texture;
+			Vector2 position;
+			Rectangle collider;
+			Rectangle sourceRec;
+			Rectangle destRec;
+			Vector2 origin;
 		};
 
 		void InitObstacle();

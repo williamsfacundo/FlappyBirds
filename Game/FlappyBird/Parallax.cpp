@@ -61,7 +61,6 @@ namespace app
 
 		void DrawParallax()
 		{
-			// Draw background image twice
 			// NOTE: Texture is scaled twice its size
 			DrawTextureEx(backgroundTexture, V1, 0.0f, 2.0f, WHITE);
 			DrawTextureEx(backgroundTexture, V2, 0.0f, 2.0f, WHITE);

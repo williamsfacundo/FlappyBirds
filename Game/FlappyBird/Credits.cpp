@@ -46,7 +46,6 @@ namespace app
 
 			textPositionX = halfScreen - MeasureText(text1, sizeText) / 2;
 			textPositionY = GetScreenHeight() * 0.13;
-			text3PositionY = GetScreenHeight() * 0.37;
 			text4PositionX = halfScreen - MeasureText(text4, sizeText2) / 2;
 			text4PositionY = GetScreenHeight() * 0.80;
 			text5PositionX = halfScreen - MeasureText(text5, sizeText) / 2;
