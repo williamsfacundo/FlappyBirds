@@ -8,19 +8,13 @@ namespace app
 	{
 		struct Column
 		{
-			Image columnImage;
-			Texture2D columnTexture;
-			Vector2 position;
-			Rectangle collider;
-			Rectangle sourceRec;
-			Rectangle destRec;
-			Vector2 origin;
+			Rectangle rec1;
+			Rectangle rec2;
 		};
 
 		void InitObstacle();
 		void UpdateObstacle();
 		void DrawObstacle();
 		void UnloadObstacle();
-		bool circleRect(float cx, float cy, float radius, float rx, float ry, float rw, float rh);
 	}
 }
