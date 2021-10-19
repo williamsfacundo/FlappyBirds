@@ -68,7 +68,6 @@ namespace app
 		void DrawPlayer()
 		{
 			DrawTexturePro(player.flappyTexture, player.sourceRec, player.destRec, player.origin, player.rotation, player.color);
-			DrawCircleV(player.position, player.radius, GREEN);
 		}
 
 		void UnloadPlayer()
@@ -100,9 +99,11 @@ namespace app
 			{
 				if (timer > delayTime)
 				{
-					if (player.rotation < 90) {
+					if (player.rotation < 90)
+					{
 						player.rotation += gravityRotation * GetFrameTime();
 					}
+
 					currentFrame = 0;
 					player.sourceRec.x = (float)currentFrame * (float)player.flappyTexture.width / 3;
 				}

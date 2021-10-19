@@ -11,19 +11,16 @@ namespace app
 {
 	namespace obstacle
 	{
-		static const int colInternalSpace = 20;
-		static const unsigned int colGap = 150;
-		static const unsigned int colSpeed = 300;
-		static const unsigned int birdGap = 215;
-		static const unsigned int minRand = 0;
-		static const unsigned int maxRand = 250;
+		static const int colGap = 150;
+		static const int colSpeed = 300;
+		static const int birdGap = 215;
+		static const int minRand = 0;
+		static const int maxRand = 250;
 
-		const int totalCols = 8;
+		static const int totalCols = 8;
 		Column columnsUp[totalCols];
 		Column columnsDown[totalCols];
-		int random;
-
-		bool playerIsDead = false;
+		static int random;
 
 		void InitObstacle()
 		{
@@ -99,7 +96,8 @@ namespace app
 					}
 
 					//Recicle
-					if (columnsUp[i].position.x + columnsUp[i].texture.width <= 0) {
+					if (columnsUp[i].position.x + columnsUp[i].texture.width <= 0) 
+					{
 						// recicle up
 						columnsUp[i].position.y = 0 - random;
 						columnsUp[i].position.x = GetScreenWidth() + colGap * 3;
