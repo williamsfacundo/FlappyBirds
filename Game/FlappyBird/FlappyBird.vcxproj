@@ -147,15 +147,25 @@
   <ItemGroup>
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Credits.cpp" />
+    <ClCompile Include="Gameover.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="Parallax.cpp" />
+    <ClCompile Include="Pause.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="Credits.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="Parallax.h" />
+    <ClInclude Include="Pause.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

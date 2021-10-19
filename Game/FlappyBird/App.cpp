@@ -3,10 +3,20 @@
 
 #include "Menu.h"
 #include "Credits.h"
+#include "Gameplay.h"
+#include "Pause.h"
+#include "GameOver.h"
+#include "Player.h"
+#include "Obstacle.h"
 
 using namespace app;
 using namespace menu;
 using namespace credits;
+using namespace gameplay;
+using namespace pause;
+using namespace gameover;
+using namespace player;
+using namespace obstacle;
 
 namespace app
 {
@@ -21,11 +31,11 @@ namespace app
 	{
 		SetExitKey(0);
 		InitWindow(screenWidth, screenHeight, "FlappyBirds");
-		//InitValues();
+		InitValues();
 		InitMenu();
 		InitCredits();
-		//InitGameover();
-		//InitPause();
+		InitGameover();
+		InitPause();
 	}
 
 	static void UpdateGame()
@@ -36,16 +46,16 @@ namespace app
 			UpdateMenu();
 			break;
 		case GAMEPLAY:
-			//UpdateFrame();
+			UpdateFrame();
 			break;
 		case GAMEOVER:
-			//UpdateGameOver();
+			UpdateGameOver();
 			break;
 		case CREDITS:
 			UpdateCredits();
 			break;
 		case PAUSE:
-			//UpdatePause();
+			UpdatePause();
 			break;
 		default:
 			break;
@@ -61,16 +71,16 @@ namespace app
 			DrawMenu();
 			break;
 		case GAMEPLAY:
-			//DrawFrame();
+			Draw();
 			break;
 		case GAMEOVER:
-			//DrawGameOver();
+			DrawGameOver();
 			break;
 		case CREDITS:
 			DrawCredits();
 			break;
 		case PAUSE:
-			//DrawPause();
+			DrawPause();
 			break;
 		default:
 			break;

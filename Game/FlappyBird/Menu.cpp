@@ -160,7 +160,7 @@ namespace app
 			DrawText(text2, text2PositionX, text2PositionY, sizeText2, BLACK);
 			DrawText(text3, text3PositionX, text3PositionY, sizeText2, BLACK);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText2, BLACK);
-			DrawText(text5, text5PositionX, text5PositionY, sizeText2, WHITE);
+			DrawText(text5, text5PositionX, text5PositionY, sizeText2, BLACK);
 		}
 
 		void UnloadMenu()
