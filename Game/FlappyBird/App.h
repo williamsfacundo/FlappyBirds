@@ -4,7 +4,7 @@ namespace app
 {
 	enum SCREENS
 	{
-		MENU = 0, GAMEPLAY, GAMEOVER, CREDITS, PAUSE
+		MENU = 0, GAMEPLAY, GAMEOVER, CREDITS, PAUSE, MULTIPLAYER
 	};
 
 	extern bool exit;

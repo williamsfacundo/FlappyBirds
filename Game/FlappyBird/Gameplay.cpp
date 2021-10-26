@@ -23,7 +23,7 @@ namespace app
 		static Color colorRect;
 		static Vector2 mousePoint;
 
-		static bool init;
+		//static bool init;
 
 		void InitValues()
 		{
@@ -46,6 +46,7 @@ namespace app
 		static void Input()
 		{
 			mousePoint = GetMousePosition();
+
 			if (CheckCollisionPointRec(mousePoint, btnPause1))
 			{
 				colorRect.a = 120;
@@ -96,6 +97,52 @@ namespace app
 			DeInitParallax();
 			UnloadPlayer();
 			UnloadObstacle();
+		}
+	}
+
+	namespace multiplayer
+	{
+		extern bool gameOver = false;
+
+		//Boton pausa
+		static Rectangle btnPause1;
+		static Rectangle btnPause2;
+		static Color colorRect;
+		static Vector2 mousePoint;
+		
+		void InitValues()
+		{
+			//init boton pausa
+			btnPause1.x = GetScreenWidth() * 0.96f;
+			btnPause1.y = GetScreenHeight() * 0.02f;
+			btnPause1.height = (GetScreenWidth() * 40) / 1600;
+			btnPause1.width = (GetScreenWidth() * 15) / 1600;
+			btnPause2.x = GetScreenWidth() * 0.975f;
+			btnPause2.y = GetScreenHeight() * 0.02f;
+			btnPause2.height = (GetScreenWidth() * 40) / 1600;
+			btnPause2.width = (GetScreenWidth() * 15) / 1600;
+			colorRect = GRAY;						
+		}
+
+		static void Input() 
+		{
+
+		}
+
+		static void Update() 
+		{
+
+		}
+
+		static void Draw() 
+		{
+
+		}
+
+		void play() 
+		{
+			Input();
+			Update();			
 		}
 	}
 }

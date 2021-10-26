@@ -57,6 +57,9 @@ namespace app
 		case PAUSE:
 			UpdatePause();
 			break;
+		case MULTIPLAYER:
+
+			break;
 		default:
 			break;
 		}
@@ -81,6 +84,9 @@ namespace app
 			break;
 		case PAUSE:
 			DrawPause();
+			break;
+		case MULTIPLAYER:
+
 			break;
 		default:
 			break;
