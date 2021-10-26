@@ -121,7 +121,9 @@ namespace app
 			btnPause2.y = GetScreenHeight() * 0.02f;
 			btnPause2.height = (GetScreenWidth() * 40) / 1600;
 			btnPause2.width = (GetScreenWidth() * 15) / 1600;
-			colorRect = GRAY;						
+			colorRect = GRAY;			
+
+			InitParallax();
 		}
 
 		static void Input() 
@@ -131,18 +133,31 @@ namespace app
 
 		static void Update() 
 		{
-
+			UpdateParallax();
 		}
 
 		static void Draw() 
 		{
+			ClearBackground(BLANK);
 
+			DrawParallax();
+		}
+
+		void ResetValues()
+		{
+			InitValues();
+			gameOver = false;
 		}
 
 		void play() 
 		{
 			Input();
 			Update();			
+		}
+
+		void UnloadGameplay()
+		{
+			DeInitParallax();			
 		}
 	}
 }
