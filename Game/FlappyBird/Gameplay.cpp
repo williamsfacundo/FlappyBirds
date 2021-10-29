@@ -7,7 +7,8 @@
 #include "Parallax.h"
 
 using namespace app;
-using namespace player;
+using namespace playerOne;
+using namespace playerTwo;
 using namespace obstacle;
 using namespace parallax;
 
@@ -21,9 +22,7 @@ namespace app
 		static Rectangle btnPause1;
 		static Rectangle btnPause2;
 		static Color colorRect;
-		static Vector2 mousePoint;
-
-		//static bool init;
+		static Vector2 mousePoint;		
 
 		void InitValues()
 		{
@@ -39,7 +38,7 @@ namespace app
 			colorRect = GRAY;
 
 			InitParallax();
-			InitPlayer();
+			playerOne::InitPlayer();
 			InitObstacle();
 		}
 
@@ -64,8 +63,8 @@ namespace app
 		static void Update()
 		{
 			UpdateParallax();
-			UpdatePlayer();
-			UpdateObstacle();
+			playerOne::UpdatePlayer();
+			UpdateObstacleOnePlayer();
 		}
 
 		void UpdateFrame()
@@ -79,7 +78,7 @@ namespace app
 			ClearBackground(BLANK);
 
 			DrawParallax();
-			DrawPlayer();
+			playerOne::DrawPlayer();
 			DrawObstacle();
 
 			DrawRectangleRec(btnPause1, colorRect);
@@ -95,7 +94,7 @@ namespace app
 		void UnloadGameplay()
 		{
 			DeInitParallax();
-			UnloadPlayer();
+			playerOne::UnloadPlayer();
 			UnloadObstacle();
 		}
 	}
@@ -124,40 +123,69 @@ namespace app
 			colorRect = GRAY;			
 
 			InitParallax();
+			playerOne::InitPlayer();
+			playerTwo::InitPlayer();
+			InitObstacle();
+			
 		}
 
 		static void Input() 
 		{
+			mousePoint = GetMousePosition();
 
+			if (CheckCollisionPointRec(mousePoint, btnPause1))
+			{
+				colorRect.a = 120;
+
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) currentScreen = PAUSE;
+			}
+			else colorRect.a = 255;
+
+			if (CheckCollisionPointRec(mousePoint, btnPause2))
+			{
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) currentScreen = PAUSE;
+			}
 		}
 
 		static void Update() 
 		{
 			UpdateParallax();
+			playerOne::UpdatePlayer();
+			playerTwo::UpdatePlayer();
+			UpdateObstacleTwoPlayers();
 		}
 
-		static void Draw() 
+		void UpdateFrame() 
+		{
+			Input();
+			Update();
+		}
+
+		void Draw() 
 		{
 			ClearBackground(BLANK);
 
 			DrawParallax();
+			playerOne::DrawPlayer();
+			playerTwo::DrawPlayer();
+			DrawObstacle();
+
+			DrawRectangleRec(btnPause1, colorRect);
+			DrawRectangleRec(btnPause2, colorRect);
 		}
 
 		void ResetValues()
 		{
 			InitValues();
 			gameOver = false;
-		}
-
-		void play() 
-		{
-			Input();
-			Update();			
-		}
+		}		
 
 		void UnloadGameplay()
 		{
 			DeInitParallax();			
+			playerOne::UnloadPlayer();
+			playerTwo::UnloadPlayer();
+			UnloadObstacle();
 		}
 	}
 }

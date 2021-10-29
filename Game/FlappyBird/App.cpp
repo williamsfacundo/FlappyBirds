@@ -15,7 +15,7 @@ using namespace credits;
 using namespace gameplay;
 using namespace pause;
 using namespace gameover;
-using namespace player;
+using namespace playerOne;
 using namespace obstacle;
 
 namespace app
@@ -46,7 +46,7 @@ namespace app
 			UpdateMenu();
 			break;
 		case GAMEPLAY:
-			UpdateFrame();
+			gameplay::UpdateFrame();
 			break;
 		case GAMEOVER:
 			UpdateGameOver();
@@ -58,7 +58,7 @@ namespace app
 			UpdatePause();
 			break;
 		case MULTIPLAYER:
-
+			multiplayer::UpdateFrame();
 			break;
 		default:
 			break;
@@ -74,7 +74,7 @@ namespace app
 			DrawMenu();
 			break;
 		case GAMEPLAY:
-			Draw();
+			gameplay::Draw();
 			break;
 		case GAMEOVER:
 			DrawGameOver();
@@ -86,7 +86,7 @@ namespace app
 			DrawPause();
 			break;
 		case MULTIPLAYER:
-			
+			multiplayer::Draw();
 			break;
 		default:
 			break;

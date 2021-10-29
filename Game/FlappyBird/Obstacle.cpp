@@ -64,7 +64,7 @@ namespace app
 			}
 		}
 
-		void UpdateObstacle()
+		void UpdateObstacleOnePlayer()
 		{
 			if (!gameOver)
 			{
@@ -83,20 +83,83 @@ namespace app
 					columnsDown[i].collider.y = (int)columnsDown[i].position.y;
 
 					//Collision player
-					if (CheckCollisionCircleRec(player::player.position, player::player.radius, columnsUp[i].collider))
+					if (CheckCollisionCircleRec(playerOne::player.position, playerOne::player.radius, columnsUp[i].collider))
 					{
 						gameOver = true;
-						player::player.isDead = true;
+						playerOne::player.isDead = true;
 					}
 
-					if (CheckCollisionCircleRec(player::player.position, player::player.radius, columnsDown[i].collider))
+					if (CheckCollisionCircleRec(playerOne::player.position, playerOne::player.radius, columnsDown[i].collider))
 					{
 						gameOver = true;
-						player::player.isDead = true;
-					}
+						playerOne::player.isDead = true;
+					}					
 
 					//Recicle
 					if (columnsUp[i].position.x + columnsUp[i].texture.width <= 0) 
+					{
+						// recicle up
+						columnsUp[i].position.y = 0 - random;
+						columnsUp[i].position.x = GetScreenWidth() + colGap * 3;
+
+						// recicle down
+						columnsDown[i].position.y = columnsUp[i].position.y + columnsUp[i].texture.height + birdGap;
+						columnsDown[i].position.x = GetScreenWidth() + colGap * 3;
+					}
+
+					columnsDown[i].destRec = { columnsDown[i].position.x, columnsDown[i].position.y, (float)columnsDown[i].texture.width,(float)columnsDown[i].texture.height };
+
+					columnsUp[i].destRec = { columnsUp[i].position.x, columnsUp[i].position.y, (float)columnsUp[i].texture.width,(float)columnsUp[i].texture.height };
+				}
+			}
+		}
+
+		void UpdateObstacleTwoPlayers()
+		{
+			if (!gameOver)
+			{
+				for (int i = 0; i < totalCols; i++)
+				{
+					//Movement
+					random = GetRandomValue(minRand, maxRand);
+
+					columnsUp[i].position.x -= colSpeed * GetFrameTime();
+					columnsDown[i].position.x -= colSpeed * GetFrameTime();
+
+					columnsUp[i].collider.x = (int)columnsUp[i].position.x;
+					columnsUp[i].collider.y = (int)columnsUp[i].position.y;
+
+					columnsDown[i].collider.x = (int)columnsDown[i].position.x;
+					columnsDown[i].collider.y = (int)columnsDown[i].position.y;
+
+					//Collision player One 
+					if (CheckCollisionCircleRec(playerOne::player.position, playerOne::player.radius, columnsUp[i].collider))
+					{
+						gameOver = true;
+						playerOne::player.isDead = true;
+					}
+
+					if (CheckCollisionCircleRec(playerOne::player.position, playerOne::player.radius, columnsDown[i].collider))
+					{
+						gameOver = true;
+						playerOne::player.isDead = true;
+					}
+
+					//Collision player Two
+					if (CheckCollisionCircleRec(playerTwo::player.position, playerTwo::player.radius, columnsUp[i].collider))
+					{
+						gameOver = true;
+						playerTwo::player.isDead = true;
+					}
+
+					if (CheckCollisionCircleRec(playerTwo::player.position, playerTwo::player.radius, columnsDown[i].collider))
+					{
+						gameOver = true;
+						playerTwo::player.isDead = true;
+					}
+
+					//Recicle
+					if (columnsUp[i].position.x + columnsUp[i].texture.width <= 0)
 					{
 						// recicle up
 						columnsUp[i].position.y = 0 - random;

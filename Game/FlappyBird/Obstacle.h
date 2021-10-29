@@ -17,7 +17,8 @@ namespace app
 		};
 
 		void InitObstacle();
-		void UpdateObstacle();
+		void UpdateObstacleOnePlayer();
+		void UpdateObstacleTwoPlayers();
 		void DrawObstacle();
 		void UnloadObstacle();
 	}

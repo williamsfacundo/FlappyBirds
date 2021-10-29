@@ -16,10 +16,8 @@ namespace app
 	namespace multiplayer
 	{
 		void InitValues();
-		void Input();
-		void Update();
-		void Draw();
-		void play();
+		void UpdateFrame();		
+		void Draw();		
 		void ResetValues();
 		void UnloadGameplay();
 
