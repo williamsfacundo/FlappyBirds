@@ -78,7 +78,8 @@ namespace app
 			ClearBackground(BLANK);
 
 			DrawParallax();
-			playerOne::DrawPlayer();
+			playerOne::DrawPlayer();			
+
 			DrawObstacle();
 
 			DrawRectangleRec(btnPause1, colorRect);
@@ -165,8 +166,8 @@ namespace app
 			ClearBackground(BLANK);
 
 			DrawParallax();
-			playerOne::DrawPlayer();
-			playerTwo::DrawPlayer();
+			playerOne::DrawPlayer();			
+			playerTwo::DrawPlayer();			
 			DrawObstacle();
 
 			DrawRectangleRec(btnPause1, colorRect);

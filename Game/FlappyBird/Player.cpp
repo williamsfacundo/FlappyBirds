@@ -67,6 +67,7 @@ namespace app
 
 		void DrawPlayer()
 		{
+			DrawText("SPACE", playerOne::player.position.x - playerOne::player.radius, playerOne::player.position.y - playerOne::player.radius * 3, 15, WHITE);
 			DrawTexturePro(player.flappyTexture, player.sourceRec, player.destRec, player.origin, player.rotation, player.color);
 		}
 
@@ -78,7 +79,7 @@ namespace app
 		void PlayerController()
 		{
 			// Player logic: acceleration
-			if (IsKeyPressed('W') && !player.isDead)
+			if (IsKeyPressed(KEY_SPACE) && !player.isDead)
 			{
 				if (player.position.y >= player.flappyTexture.height)
 				{
@@ -193,6 +194,7 @@ namespace app
 
 		void DrawPlayer()
 		{			
+			DrawText("ENTER", playerTwo::player.position.x - playerTwo::player.radius, playerTwo::player.position.y - playerTwo::player.radius * 3, 15, WHITE);
 			DrawTexturePro(player.flappyTexture, player.sourceRec, player.destRec, player.origin, player.rotation, player.color);
 		}
 
@@ -204,7 +206,7 @@ namespace app
 		void PlayerController()
 		{
 			// Player logic: acceleration
-			if (IsKeyPressed(KEY_SPACE) && !player.isDead)
+			if (IsKeyPressed(KEY_ENTER) && !player.isDead)
 			{
 				if (player.position.y >= player.flappyTexture.height)
 				{
