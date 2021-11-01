@@ -99,7 +99,17 @@ namespace app
 			{
 				colorRect4.a = 120;
 
-				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) currentScreen = GAMEPLAY;
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) 
+				{
+					if (onePlayer) 
+					{ 
+						currentScreen = GAMEPLAY; 
+					}
+					else 
+					{
+						currentScreen =	MULTIPLAYER;
+					}
+				}
 			}
 			else colorRect4.a = 255;
 
@@ -109,8 +119,18 @@ namespace app
 
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 				{
-					currentScreen = GAMEPLAY;
-					ResetValues();
+					if (onePlayer) 
+					{
+						currentScreen = GAMEPLAY;
+						gameplay::UnloadGameplay();
+						gameplay::ResetValues();
+					}
+					else 
+					{
+						currentScreen = MULTIPLAYER;
+						multiplayer::UnloadGameplay();
+						multiplayer::ResetValues();
+					}				
 				}
 			}
 			else colorRect3.a = 255;
@@ -123,11 +143,21 @@ namespace app
 				{
 					currentScreen = MENU;
 					InitMenu();
-					ResetValues();
-					UnloadGameplay();
+
+					if (onePlayer) 
+					{
+						gameplay::UnloadGameplay();
+						gameplay::ResetValues();
+					}
+					else 
+					{
+						multiplayer::UnloadGameplay();
+						multiplayer::ResetValues();						
+					}				
 				}
 			}
 			else colorRect1.a = 255;
+
 			if (CheckCollisionPointRec(mousePoint, rect2))
 			{
 				colorRect2.a = 120;

@@ -1,22 +1,4 @@
 #include "App.h"
-#include "raylib.h"
-
-#include "Menu.h"
-#include "Credits.h"
-#include "Gameplay.h"
-#include "Pause.h"
-#include "GameOver.h"
-#include "Player.h"
-#include "Obstacle.h"
-
-using namespace app;
-using namespace menu;
-using namespace credits;
-using namespace gameplay;
-using namespace pause;
-using namespace gameover;
-using namespace playerOne;
-using namespace obstacle;
 
 namespace app
 {
@@ -24,6 +6,7 @@ namespace app
 	static int screenHeight = 600;
 
 	bool exit = false;
+	bool onePlayer = true;
 
 	SCREENS currentScreen = MENU;
 
@@ -31,7 +14,8 @@ namespace app
 	{
 		SetExitKey(0);
 		InitWindow(screenWidth, screenHeight, "FlappyBirds");
-		InitValues();
+		gameplay::InitValues();
+		multiplayer::InitValues();
 		InitMenu();
 		InitCredits();
 		InitGameover();
@@ -97,6 +81,9 @@ namespace app
 	static void CloseGame()
 	{
 		CloseWindow();
+
+		gameplay::UnloadGameplay();
+		multiplayer::UnloadGameplay();
 	}
 
 	void ExecuteGame()

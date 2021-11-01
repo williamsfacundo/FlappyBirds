@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAMEPLAY_H
+#define GAMEPLAY_H
 
 namespace app
 {
@@ -24,3 +25,5 @@ namespace app
 		extern bool gameOver;
 	}
 }
+
+#endif

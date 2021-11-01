@@ -125,8 +125,7 @@ namespace app
 			InitParallax();
 			playerOne::InitPlayer();
 			playerTwo::InitPlayer();
-			InitObstacle();
-			
+			InitObstacle();			
 		}
 
 		static void Input() 

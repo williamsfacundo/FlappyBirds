@@ -158,8 +158,8 @@ namespace app
 
 			player.flappyTexture = LoadTextureFromImage(player.flappyImage);
 
-			player.position = { (float)GetScreenWidth() / 2 - player.flappyTexture.width / 2 - 160, (float)GetScreenHeight() / 2 - player.flappyTexture.height / 2 };
-			player.color = WHITE;
+			player.position = { (float)GetScreenWidth() / 2 - player.flappyTexture.width / 2 - 150, (float)GetScreenHeight() / 2 - player.flappyTexture.height / 2 };
+			player.color = RED;
 			player.acceleration = { 0,0 };
 			player.rotation = 0;
 			player.speed.x = 0;
@@ -192,7 +192,7 @@ namespace app
 		}
 
 		void DrawPlayer()
-		{
+		{			
 			DrawTexturePro(player.flappyTexture, player.sourceRec, player.destRec, player.origin, player.rotation, player.color);
 		}
 

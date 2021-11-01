@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PAUSE_H
+#define PAUSE_H
 
 namespace app
 {
@@ -11,3 +12,5 @@ namespace app
 		extern bool mute;
 	}
 }
+
+#endif

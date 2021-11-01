@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAMEOVER_H
+#define GAMEOVER_H
 
 namespace app
 {
@@ -9,3 +10,5 @@ namespace app
 		void DrawGameOver();
 	}
 }
+
+#endif

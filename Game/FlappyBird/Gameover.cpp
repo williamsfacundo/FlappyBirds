@@ -71,14 +71,28 @@ namespace app
 		void UpdateGameOver()
 		{
 			mousePoint = GetMousePosition();
+
 			if (CheckCollisionPointRec(mousePoint, rect1))
 			{
 				colorRect1.a = 120;
 
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 				{
-					currentScreen = GAMEPLAY;
-					ResetValues();
+					if(onePlayer)
+					{
+						currentScreen = GAMEPLAY;
+						gameplay::UnloadGameplay();
+						gameplay::ResetValues();						
+					}
+					else 
+					{
+						currentScreen = MULTIPLAYER;
+						gameplay::UnloadGameplay();
+						gameplay::ResetValues();
+						playerOne::InitPlayer();
+						multiplayer::UnloadGameplay();
+						multiplayer::ResetValues();
+					}					
 				}
 			}
 			else colorRect1.a = 255;
@@ -91,8 +105,17 @@ namespace app
 				{
 					currentScreen = MENU;
 					InitMenu();
-					ResetValues();
-					//UnloadGameplay();
+
+					if (onePlayer) 
+					{
+						gameplay::UnloadGameplay();
+						gameplay::ResetValues();
+					}				
+					else 
+					{
+						multiplayer::UnloadGameplay();
+						multiplayer::ResetValues();
+					}
 				}
 			}
 			else colorRect2.a = 255;

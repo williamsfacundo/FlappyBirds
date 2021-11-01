@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MENU_H
+#define MENU_H
 
 namespace app
 {
@@ -10,3 +11,5 @@ namespace app
 		void UnloadMenu();
 	}
 }
+
+#endif

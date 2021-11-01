@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OBSTACLE_H
+#define OBSTACLE_H
 
 #include "raylib.h"
 
@@ -23,3 +24,5 @@ namespace app
 		void UnloadObstacle();
 	}
 }
+
+#endif

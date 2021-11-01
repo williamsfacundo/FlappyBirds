@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CREDITOS_H
+#define CREDITOS_H
 
 namespace app
 {
@@ -9,3 +10,5 @@ namespace app
 		void DrawCredits();
 	}
 }
+
+#endif

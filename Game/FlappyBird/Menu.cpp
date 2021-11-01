@@ -154,8 +154,9 @@ namespace app
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 				{
 					UnloadMenu();
-					//InitValues();
+					
 					currentScreen = GAMEPLAY;
+					onePlayer = true;
 				}
 			}
 			else colorRect4.a = 255;
@@ -169,6 +170,7 @@ namespace app
 					UnloadMenu();
 					
 					currentScreen = MULTIPLAYER;
+					onePlayer = false;
 				}
 			}
 			else colorRect1.a = 255;
