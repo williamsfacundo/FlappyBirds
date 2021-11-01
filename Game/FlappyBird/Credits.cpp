@@ -82,6 +82,7 @@ namespace app
 			DrawText(text1, textPositionX, textPositionY, sizeText, BLUE);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText2, BLACK);
 			DrawText(text5, text5PositionX, text5PositionY, sizeText, BLUE);
+			DrawText("V 0.3", GetScreenWidth() - 70, GetScreenHeight() - 70, (GetScreenWidth() * 20) / 800, WHITE);
 		}
 	}
 }
