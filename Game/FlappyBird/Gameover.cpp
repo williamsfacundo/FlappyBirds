@@ -128,7 +128,7 @@ namespace app
 			DrawRectangleRec(rect2, colorRect2);
 			DrawText(text1, text1PositionX, text1PositionY, sizeText2, BLACK);
 			DrawText(text3, text3PositionX, text3PositionY, sizeText2, BLACK);
-			DrawText(text4, text4PositionX, text4PositionY, sizeText2, BLACK);
+			DrawText(text4, text4PositionX, text4PositionY, sizeText2, BLACK);		
 		}
 	}
 }

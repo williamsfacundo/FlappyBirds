@@ -29,6 +29,7 @@ namespace app
 
 	extern bool exit;
 	extern bool onePlayer;
+	extern bool winner;
 	extern SCREENS currentScreen;
 
 	void ExecuteGame();

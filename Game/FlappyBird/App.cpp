@@ -7,6 +7,7 @@ namespace app
 
 	bool exit = false;
 	bool onePlayer = true;
+	bool winner = true;
 
 	SCREENS currentScreen = MENU;
 

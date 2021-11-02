@@ -82,7 +82,8 @@ namespace app
 			DrawText(text1, textPositionX, textPositionY, sizeText, BLUE);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText2, BLACK);
 			DrawText(text5, text5PositionX, text5PositionY, sizeText, BLUE);
-			DrawText("V 0.3", GetScreenWidth() - 70, GetScreenHeight() - 70, (GetScreenWidth() * 20) / 800, WHITE);
+			DrawText("V 1.0", GetScreenWidth() - 70, GetScreenHeight() - 70, (GetScreenWidth() * 20) / 800, WHITE);
+			DrawText("https://wallpaperscraft.com/download/hills_landscape_minimalism_evening_sky_beauty_74526/1920x1080", 20, GetScreenHeight() / 2, 12, WHITE);
 		}
 	}
 }

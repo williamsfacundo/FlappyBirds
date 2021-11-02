@@ -15,7 +15,7 @@ namespace app
 		static char text3[] = "CREDITOS";
 		static char text4[] = "SONIDO";
 		static char text5[] = "SALIR";
-		static char text6[] = "V 0.3";
+		static char text6[] = "V 1.0";
 		static int sizeText2 = 0;
 		static int sizeText3 = 0;
 		static int text1PositionX = 0;
@@ -50,13 +50,13 @@ namespace app
 		static int halfScreenHeight = 0;
 
 		static Image menuImage;
-		static Texture2D menuImageTexture;
+		static Texture2D menuImageTexture;		
 		static float scaleBackground;
 
 		void InitMenu()
 		{
 			menuImage = LoadImage("../res/backgroundMenu.png");
-			menuImageTexture = LoadTextureFromImage(menuImage);
+			menuImageTexture = LoadTextureFromImage(menuImage);						
 			halfScreenWidth = GetScreenWidth() / 2;
 			halfScreenHeight = GetScreenHeight() / 3;
 
@@ -190,13 +190,13 @@ namespace app
 			DrawText(text3, text3PositionX, text3PositionY, sizeText2, BLACK);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText2, BLACK);
 			DrawText(text5, text5PositionX, text5PositionY, sizeText2, BLACK);
-			DrawText(text6, text6PositionX, text6PositionY, sizeText2, BLACK);
+			DrawText(text6, text6PositionX, text6PositionY, sizeText2, BLACK);			
 		}
 
 		void UnloadMenu()
 		{
 			UnloadTexture(menuImageTexture);
-			UnloadImage(menuImage);
+			UnloadImage(menuImage);			
 		}
 
 	}
